@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>词频统计助手</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .word-list {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .word-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .word-item:last-child {
+      border-bottom: none;
+    }
+    .word-text {
+      font-weight: bold;
+    }
+    .word-count {
+      color: #666;
+      margin-left: 10px;
+    }
+    .known-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .known-btn:hover {
+      background-color: #45a049;
+    }
+    .tabs {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .tab {
+      padding: 8px 15px;
+      cursor: pointer;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      margin-right: 5px;
+    }
+    .tab.active {
+      background-color: #fff;
+      border-bottom: 1px solid white;
+      margin-bottom: -1px;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .known-word-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .remove-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .remove-btn:hover {
+      background-color: #d32f2f;
+    }
+    .status {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>词频统计助手</h1>
+  
+  <div class="tabs">
+    <div class="tab active" id="tab-frequency">词频统计</div>
+    <div class="tab" id="tab-known">已知单词</div>
+  </div>
+  
+  <div class="tab-content active" id="content-frequency">
+    <div class="status" id="status-message">正在统计当前页面单词...</div>
+    <div class="word-list" id="word-list">
+      <!-- 词频列表将通过JavaScript动态生成 -->
+    </div>
+  </div>
+  
+  <div class="tab-content" id="content-known">
+    <div class="word-list" id="known-word-list">
+      <!-- 已知单词列表将通过JavaScript动态生成 -->
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

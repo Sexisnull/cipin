@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "词频统计助手",
+  "version": "1.0",
+  "description": "统计网页中的英文单词词频，展示最常见的单词，并允许标记已认识的单词",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
